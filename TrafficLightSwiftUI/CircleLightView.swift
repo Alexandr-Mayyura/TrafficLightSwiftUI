@@ -10,12 +10,12 @@ import SwiftUI
 struct CircleLightView: View {
     let color: Color
     let opacity: CGFloat
+    
     var body: some View {
         Circle()
             .frame(width: 100)
             .foregroundColor(color.opacity(opacity))
             .overlay(Circle().stroke(Color.white, lineWidth: 5))
-        
     }
 }
 

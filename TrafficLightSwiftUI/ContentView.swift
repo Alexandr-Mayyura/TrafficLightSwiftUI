@@ -39,7 +39,6 @@ struct ContentView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.white, lineWidth: 4))
-
             }
             .padding()
         }
@@ -68,8 +67,8 @@ struct ContentView: View {
 }
 
 private enum CurrentLight {
-       case red, yellow, green
-   }
+    case red, yellow, green
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
