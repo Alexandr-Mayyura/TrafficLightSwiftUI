@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TrafficLightsView: View {
     @State private var nameButton = "START"
     @State private var currentLight = CurrentLight.red
     
@@ -24,9 +24,8 @@ struct ContentView: View {
                 .ignoresSafeArea()
             VStack {
                 CircleLightView(color: .red, opacity: redOpacity)
-                    .padding(.bottom, 16)
                 CircleLightView(color: .yellow, opacity: yellowOpacity)
-                    .padding(.bottom, 16)
+                    .padding()
                 CircleLightView(color: .green, opacity: greenOpacity)
                 
                 Spacer()
@@ -37,8 +36,11 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .font(.largeTitle)
                 }
-                .buttonStyle(.borderedProminent)
-                .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.white, lineWidth: 4))
+                    .buttonStyle(.borderedProminent)
+                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(
+                        Color.white,
+                        lineWidth: 5)
+                    )
             }
             .padding()
         }
@@ -66,13 +68,13 @@ struct ContentView: View {
     }
 }
 
-private enum CurrentLight {
+enum CurrentLight {
     case red, yellow, green
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TrafficLightsView()
     }
 }
 
