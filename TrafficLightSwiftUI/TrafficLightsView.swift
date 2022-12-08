@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TrafficLightsView: View {
     @State private var nameButton = "START"
     @State private var currentLight = CurrentLight.red
     
@@ -24,7 +24,6 @@ struct ContentView: View {
                 .ignoresSafeArea()
             VStack {
                 CircleLightView(color: .red, opacity: redOpacity)
-                    .padding(.bottom, 16)
                 CircleLightView(color: .yellow, opacity: yellowOpacity)
                     .padding(.bottom, 16)
                 CircleLightView(color: .green, opacity: greenOpacity)
@@ -66,13 +65,13 @@ struct ContentView: View {
     }
 }
 
-private enum CurrentLight {
+enum CurrentLight {
     case red, yellow, green
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TrafficLightsView()
     }
 }
 
