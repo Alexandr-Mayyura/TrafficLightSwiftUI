@@ -25,7 +25,7 @@ struct TrafficLightsView: View {
             VStack {
                 CircleLightView(color: .red, opacity: redOpacity)
                 CircleLightView(color: .yellow, opacity: yellowOpacity)
-                    .padding(.bottom, 16)
+                    .padding()
                 CircleLightView(color: .green, opacity: greenOpacity)
                 
                 Spacer()
