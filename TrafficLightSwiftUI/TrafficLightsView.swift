@@ -36,8 +36,11 @@ struct TrafficLightsView: View {
                         .foregroundColor(.white)
                         .font(.largeTitle)
                 }
-                .buttonStyle(.borderedProminent)
-                .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.white, lineWidth: 4))
+                    .buttonStyle(.borderedProminent)
+                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(
+                        Color.white,
+                        lineWidth: 5)
+                    )
             }
             .padding()
         }
