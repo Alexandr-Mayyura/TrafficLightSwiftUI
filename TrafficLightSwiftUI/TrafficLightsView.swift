@@ -15,9 +15,6 @@ struct TrafficLightsView: View {
     @State private var yellowOpacity: CGFloat = 0.3
     @State private var greenOpacity: CGFloat = 0.3
     
-    private let lightIsOn: CGFloat = 1
-    private let lightIsOff: CGFloat = 0.3
-    
     var body: some View {
         ZStack{
             Color(.black)
@@ -30,14 +27,14 @@ struct TrafficLightsView: View {
                 
                 Spacer()
                 
-                Button(action: { startButtonPressed() }) {
+                Button(action: startButtonPressed) {
                     Text(nameButton)
                         .frame(width: 180, height: 40)
                         .foregroundColor(.white)
                         .font(.largeTitle)
                 }
-                    .buttonStyle(.borderedProminent)
-                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(
+                .buttonStyle(.borderedProminent)
+                .overlay(RoundedRectangle(cornerRadius: 16).stroke(
                         Color.white,
                         lineWidth: 5)
                     )
@@ -47,6 +44,9 @@ struct TrafficLightsView: View {
     }
     
     private func startButtonPressed() {
+        let lightIsOn: CGFloat = 1
+        let lightIsOff: CGFloat = 0.3
+        
         if nameButton == "START" {
             nameButton = "NEXT"
         }

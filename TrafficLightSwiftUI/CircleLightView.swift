@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CircleLightView: View {
     let color: Color
-    let opacity: CGFloat
+    let opacity: Double
     
     var body: some View {
         Circle()
